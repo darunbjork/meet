@@ -19,7 +19,7 @@ const Event = ({ event }) => {
       </button>
       {showDetails && (
         <div>
-          {/* Additional details or any other information you want to display when details are shown */}
+         {/* Additional details or any other information you want to display when details are shown */}
         </div>
       )}
     </li>

@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 
-=======
 Feature 2: Show/Hide Event Details
 User Story
 
@@ -77,4 +75,4 @@ Then the app should display visual charts representing event-related data
 Within the Meet app, serverless functions play a pivotal role in managing user authentication and access to public calendar events sourced from the Google Calendar API. To ensure a streamlined and secure authorization process, serverless functions handle the generation and provisioning of access tokens. This approach eliminates the need for a dedicated server, offering a more efficient and cost-effective solution.
 
 The choice of AWS Lambda as our cloud-service provider for these serverless functions aligns seamlessly with our app's architecture goals. AWS Lambda enables dynamic scalability, automatically adjusting resources based on demand. This not only enhances the app's responsiveness during peak usage but also optimizes costs during periods of lower activity. By embracing serverless technology, we empower our development team to prioritize feature development and user experience, without the overhead of managing traditional server infrastructure.
->>>>>>> 886396b (Update test data in Event.test.js for accurate rendering of events (replace 'Sample Event' with 'Stockholm' and other relevant changes))
+

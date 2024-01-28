@@ -1,26 +1,28 @@
-import React, { useState } from 'react';
+// src/components/NumberOfEvents.js
 
-const NumberOfEvents = () => {
-  const [eventCount, setEventCount] = useState(32);
+import { useState } from "react";
 
-  const handleInputChange = (e) => {
-    const value = parseInt(e.target.value, 10);
-    setEventCount(value);
-  };
+const NumberOfEvents = ({ }) => {
+
+  const [number, setNumber] = useState(32);
+
+  const handleInputChanged = (event) => {
+    const value = event.target.value;
+    setNumber(value);
+  }
 
   return (
-    <div id="numberOfEvents">
-      <label htmlFor="eventCount">Number of Events:</label>
+    <div id="number-of-events">
+      <label htmlFor="number-of-events-input">Number of Events: </label>
       <input
-        type="number"
-        id="eventCount"
-        name="eventCount"
-        value={eventCount}
-        onChange={handleInputChange}
-        role="textbox"
+        type="text"
+        id="number-of-events-input"
+        className="number-of-events-input"
+        value={number}
+        onChange={handleInputChanged}
       />
     </div>
   );
-};
+}
 
 export default NumberOfEvents;

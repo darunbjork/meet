@@ -1,15 +1,21 @@
-// src/components/NumberOfEvents.js
+import React, { useState } from "react";
 
-import { useState } from "react";
-
-const NumberOfEvents = ({ }) => {
-
+const NumberOfEvents = ({ setCurrentNOE, setErrorAlert }) => {
   const [number, setNumber] = useState(32);
 
   const handleInputChanged = (event) => {
     const value = event.target.value;
-    setNumber(value);
-  }
+    setNumber(value); // Fixed the typo here (setNumEvents -> setNumber)
+
+    // Alerts
+    let errorText;
+    if (isNaN(value) || value <= 0) {
+      errorText = "Only positive numbers are allowed";
+    } else {
+      errorText = "";
+    }
+    setErrorAlert(errorText);
+  };
 
   return (
     <div id="number-of-events">
@@ -23,6 +29,6 @@ const NumberOfEvents = ({ }) => {
       />
     </div>
   );
-}
+};
 
 export default NumberOfEvents;

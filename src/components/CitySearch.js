@@ -8,24 +8,23 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
   useEffect(() => {
     // Update suggestions based on allLocations
     setSuggestions(allLocations);
-  }, [allLocations]); // Corrected dependency array
+  }, [allLocations]);
 
   const handleInputChanged = (event) => {
     const value = event.target.value;
 
     // Simplified location filtering using includes
-    const filteredLocations = allLocations
-      ? allLocations.filter((location) =>
-          location.toUpperCase().includes(value.toUpperCase()) // Corrected location filtering
-        )
-      : [];
+    const filteredLocations = allLocations.filter((location) =>
+      location.toUpperCase().includes(value.toUpperCase())
+    );
 
     setQuery(value);
     setSuggestions(filteredLocations);
 
     let infoText;
     if (filteredLocations.length === 0) {
-      infoText = "We cannot find the city you are looking for. Please try another city"; // Corrected the infoText message
+      infoText =
+        "We cannot find the city you are looking for. Please try another city";
     } else {
       infoText = "";
     }

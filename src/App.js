@@ -1,13 +1,12 @@
-// src/App.js
-
 import CitySearch from './components/CitySearch';
 import EventList from './components/EventList';
 import NumberOfEvents from './components/NumberOfEvents';
+import CityEventsChart from './components/CityEventsChart';  // Import CityEventsChart
+import EventGenresChart from './components/EventGenresChart';  // Import EventGenresChart
 import { useEffect, useState } from 'react';
 import { extractLocations, getEvents } from './api';
 import './App.css';
 import { InfoAlert, ErrorAlert, WarningAlert } from './components/Alert';
-
 
 const App = () => {
   const [allLocations, setAllLocations] = useState([]);
@@ -26,7 +25,6 @@ const App = () => {
     }
     fetchData();
   }, [currentCity, currentNOE]);
-  
 
   const fetchData = async () => {
     const allEvents = await getEvents();
@@ -37,7 +35,6 @@ const App = () => {
     setEvents(filteredEvents.slice(0, currentNOE));
     setAllLocations(extractLocations(allEvents));
   };
-
 
   return (
     <div className="App">
@@ -61,6 +58,8 @@ const App = () => {
         setCurrentNOE={setCurrentNOE}
         setErrorAlert={setErrorAlert}
       />
+      <CityEventsChart allLocations={allLocations} events={events} />
+      <EventGenresChart events={events} />
       
       <EventList events={events} />
     </div>

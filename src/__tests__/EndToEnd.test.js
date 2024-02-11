@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import puppeteer from 'puppeteer';
 
-jest.setTimeout(10000); // Set the timeout to 10 seconds (adjust as needed)
+jest.setTimeout(30000); // Set the timeout to 30 seconds (adjust as needed)
 
 describe('show/hide an event details', () => {
   let browser;
@@ -11,7 +11,7 @@ describe('show/hide an event details', () => {
     browser = await puppeteer.launch({
       headless: false,
       slowMo: 250, // slow down by 250ms,
-      timeout: 0 // removes any puppeteer/browser timeout limitations (this isn't the same as the timeout of jest)
+      timeout: 10000, // Set the timeout to 10 seconds (adjust as needed)
     });
     page = await browser.newPage();
     await page.goto('http://localhost:3000/');

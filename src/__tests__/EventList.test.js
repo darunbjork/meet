@@ -1,15 +1,23 @@
-// src/__test__/EventList.test.js
-
 import { render, within, waitFor } from '@testing-library/react';
 import { getEvents } from '../api';
 import EventList from '../components/EventList';
 import App from "../App";
 
+// Mock ResizeObserver
+class ResizeObserverMock {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+}
+
+global.ResizeObserver = ResizeObserverMock;
+
 describe('<EventList /> component', () => {
   let EventListComponent;
+
   beforeEach(() => {
     EventListComponent = render(<EventList />);
-  })
+  });
 
   test('has an element with "list" role', () => {
     expect(EventListComponent.queryByRole("list")).toBeInTheDocument();

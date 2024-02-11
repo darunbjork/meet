@@ -200,3 +200,376 @@ p {
   width: 250px;
   z-index: 1000;
 }
+
+/* App.scss */
+
+$primary-color: #2a71d0;
+$secondary-color: #fff;
+$accent-color: #61dafb;
+$dark-blue: #35424a;
+$darker-blue: #182026;
+
+.App {
+  text-align: center;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.alerts-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  position: fixed;
+  top: 0;
+  left: 20px;
+  width: 250px;
+  z-index: 1000;
+}
+
+.title-box {
+  background-color: $primary-color;
+  color: $secondary-color;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #f0f0f0;
+}
+
+.button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+/* EventList Styles */
+.event-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.event-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+  transform: scale(1.05);
+}
+
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* App.js */
+.App {
+  text-align: center;
+  padding: 2% 5%;
+  background-color: #f8f8f8;
+  font-family: 'Roboto', sans-serif;
+}
+
+.NumberOfEvents {
+  margin-top: 20px;
+}
+
+/* CitySearch.js */
+#city-search {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.city {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.city:focus {
+  border-color: #61dafb;
+}
+
+.suggestions {
+  width: 100%;
+  position: absolute;
+  top: 45px;
+  z-index: 2;
+  margin: 0;
+  font-size: 14px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: white;
+  list-style: none;
+  padding: 0;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.suggestions > li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.suggestions > li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Event.js */
+.event {
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.event:hover {
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.event h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.event p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.details-btn {
+  background-color: #35424a;  /* Dark Blue */
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  outline: none;
+  margin-top: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.details-btn:hover {
+  background-color: #182026;  /* Darker Blue on Hover */
+}
+
+.details {
+  margin-top: 10px;
+  color: #444;
+}
+
+/* EventList.js */
+#event-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* NumberOfEvents.js */
+#number-of-events {
+  margin-top: 20px;
+}
+
+.label {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.number-of-events-input {
+  width: 60px;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.number-of-events-input:focus {
+  border-color: #61dafb;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  /* Add responsive styles here */
+}
+
+/* Typography */
+body {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+}
+
+p {
+  color: #333;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.btn-primary {
+  background-color: #61dafb;
+  color: white;
+}
+
+.btn:hover {
+  background-color: #4fa3d1;
+}
+
+/* Box Shadow and Hover Effects */
+.box-shadow {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.box-shadow:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.alerts-container {
+  position: fixed;
+  top: 0px;
+  left: 20px;
+  width: 250px;
+  z-index: 1000;
+}
+
+
+/* App.css */
+
+.App {
+  text-align: center;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.alerts-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.title-box {
+  background-color: #2a71d0;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #f0f0f0;
+}
+
+/* Button Styles */
+.button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+/* EventList Styles */
+.event-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.event-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+  transform: scale(1.05);
+}
+
+
+.charts-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 768px) {
+  .charts-container {
+    grid-template-columns: 1fr;
+  }
+}

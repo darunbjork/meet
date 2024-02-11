@@ -1,10 +1,18 @@
-// showHideAnEventsDetails.steps.js
 import { loadFeature, defineFeature } from 'jest-cucumber';
 import { render, waitFor, within } from '@testing-library/react';
 import App from '../App';
 import Event from '../components/Event';
 import { getEvents } from '../api';
 import userEvent from '@testing-library/user-event';
+
+// Mock ResizeObserver
+class ResizeObserverMock {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+}
+
+global.ResizeObserver = ResizeObserverMock;
 
 const feature = loadFeature('./src/features/showHideAnEventsDetails.feature');
 

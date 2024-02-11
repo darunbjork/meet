@@ -3,6 +3,15 @@ import userEvent from "@testing-library/user-event";
 import CitySearch from "../components/CitySearch";
 import App from "../App";
 
+// Mock ResizeObserver
+class ResizeObserverMock {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+}
+
+global.ResizeObserver = ResizeObserverMock;
+
 import { extractLocations, getEvents } from "../api";
 
 const setupCitySearch = (props = {}) => {
@@ -32,8 +41,6 @@ describe("<CitySearch/> component", () => {
     expect(suggestionList).not.toBeInTheDocument();
   });
 
- 
-  
   test("updates list of suggestions correctly when user types in city textbox", async () => {
     const user = userEvent.setup();
     const allEvents = await getEvents();

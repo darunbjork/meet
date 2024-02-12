@@ -19,7 +19,7 @@ class Alert extends Component {
       textAlign: "center",
       fontSize: "12px",
       margin: "10px 0",
-      padding: "10px"
+      padding: "10px",
     };
   }
 
@@ -35,27 +35,33 @@ class Alert extends Component {
 class InfoAlert extends Alert {
   constructor(props) {
     super(props);
-    this.color = 'rgb(0, 0, 255)'; // blue
-    this.bgColor = 'rgb(220, 220, 255)'; // light blue
+    this.color = 'blue';
+    this.bgColor = '#e0f0ff'; // light blue
   }
 }
 
 class ErrorAlert extends Alert {
-    constructor(props) {
-        super(props);
-        this.color = 'red';
-        this.bgColor = '#f69697'; // light red
-    }
+  constructor(props) {
+    super(props);
+    this.color = 'darkred';
+    this.bgColor = '#ffdcdc'; // light red
+  }
 }
 
 class WarningAlert extends Alert {
   constructor(props) {
-      super(props);
-      this.color = 'orange';
-      this.bgColor = '#ffa756'; // light orange
+    super(props);
+    this.color = 'darkorange';
+    this.bgColor = '#ffeac2'; // light orange
   }
 }
 
-export { InfoAlert, ErrorAlert, WarningAlert }; 
+export { InfoAlert, ErrorAlert, WarningAlert };
+
+
+
+
+
+ 
 
 
